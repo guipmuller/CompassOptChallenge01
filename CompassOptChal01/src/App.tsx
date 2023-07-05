@@ -1,40 +1,22 @@
-import './App.css';
+import "./App.css";
+import DetailsWeater from "./components/DetailsWeater";
+import LocalNDay from "./components/LocalNDay";
+import Navbar from "./components/Navbar";
+import Weather from "./components/Weather";
+import UseFetch from "./hooks/UseFetch";
 
-function App() {
-  
-  const url = "http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=69078e247ecd227eac08756c439b4ade";
-
+const App = () => {
   return (
     <>
       <div>
-        <section>
-          navbar
-        </section>
-        <section>
-          <p>
-            Cidade, País
-          </p>
-          <p>
-            Data
-          </p>
-        </section>
-        <section>
-          Clima
-        </section>
-        <section>
-          <p>
-            Chuva
-          </p>
-          <p>
-            Vento
-          </p>
-          <p>
-            Umidade
-          </p>
-        </section>
+        <UseFetch />
+        <Navbar />
+        <LocalNDay />
+        <Weather />
+        <DetailsWeater />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
